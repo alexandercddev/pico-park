@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgb(255,255,255);
+    border-bottom: 10vw solid rgb(184,97,57);
+    overflow: hidden;
+}
+
+.pico-park {
+    width: 200px;
+    height: 200px;    
+    border: 1px solid #000;
+}
