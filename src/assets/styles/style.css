@@ -3,21 +3,184 @@
   padding: 0;
 }
 
+body {
+  overflow: hidden;
+}
+
 .container {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   background-color: white;
-  border-bottom: 10vw solid #b86139;
-  overflow: hidden;
+  border-bottom: 20vw solid #b86139;
 }
 
 .pico-park {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #000;
+  width: 8em;
+  height: 8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.pico-park-head {
+  cursor: pointer;
+  width: 7em;
+  height: 4em;
+  background-color: #646464;
+  border: 0.25em solid #383737;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pico-park-head::before {
+  content: "";
+  position: absolute;
+  width: 2.5em;
+  height: 1em;
+  background-color: #646464;
+  border: 0.25em solid #383737;
+  border-bottom: none;
+  transform: translate(-2.25em, -2.62em);
+}
+.pico-park-head::after {
+  content: "";
+  position: absolute;
+  width: 2.5em;
+  height: 1em;
+  background-color: #646464;
+  border: 0.25em solid #383737;
+  border-bottom: none;
+  transform: translate(2.25em, -2.62em);
+}
+
+.pico-park-eyes {
+  cursor: pointer;
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #020001;
+  transform: translate(-0.9em, 0.5em);
+  box-shadow: 3.5em 0 0px #020001;
+}
+
+.pico-park-body {
+  cursor: pointer;
+  width: 3em;
+  height: 1.5em;
+  background-color: #646464;
+  border: 0.25em solid #383737;
+  border-top: none;
+  border-bottom: none;
+  transform: translateY(-0.25em);
+}
+.pico-park-body::before {
+  content: "";
+  position: absolute;
+  background-color: #646464;
+  border: 0.25em solid #383737;
+  width: 1em;
+  height: 1.25em;
+  transform: translate(2.25em, 0.25em);
+  border-top: none;
+  border-left: none;
+}
+.pico-park-body::after {
+  content: "";
+  position: absolute;
+  background-color: #FFF;
+  width: 0.5em;
+  height: 0.5em;
+  transform: translate(0.25em, 0.75em);
+  box-shadow: 2.2em 0 0 #646464, 2.5em 0 0 #FFF;
+}
+
+.pico-park-feet {
+  cursor: pointer;
+}
+.pico-park-feet::before {
+  position: absolute;
+  content: "";
+  width: 1.5em;
+  height: 1em;
+  background-color: #646464;
+  border: 0.25em solid #383737;
+  border-top: none;
+  transform: translate(-1.75em, -0.25em);
+}
+.pico-park-feet::after {
+  position: absolute;
+  content: "";
+  width: 1.25em;
+  height: 1em;
+  background-color: #646464;
+  border: 0.25em solid #383737;
+  border-top: none;
+  transform: translateY(-0.25em);
+}
+
+.pico-rose > .pico-park-head,
+.pico-rose > .pico-park-head::before,
+.pico-rose > .pico-park-head::after,
+.pico-rose > .pico-park-body,
+.pico-rose > .pico-park-body::before,
+.pico-rose > .pico-park-feet::before,
+.pico-rose > .pico-park-feet::after {
+  background-color: #df7a7a;
+  border-color: #a26f72;
+}
+
+.pico-rose > .pico-park-body::after {
+  box-shadow: 2.2em 0 0 #df7a7a, 2.5em 0 0 #FFF;
+}
+
+.pico-green > .pico-park-head,
+.pico-green > .pico-park-head::before,
+.pico-green > .pico-park-head::after,
+.pico-green > .pico-park-body,
+.pico-green > .pico-park-body::before,
+.pico-green > .pico-park-feet::before,
+.pico-green > .pico-park-feet::after {
+  background-color: #94e094;
+  border-color: #6a9e6b;
+}
+
+.pico-green > .pico-park-body::after {
+  box-shadow: 2.2em 0 0 #94e094, 2.5em 0 0 #FFF;
+}
+
+.pico-yellow > .pico-park-head,
+.pico-yellow > .pico-park-head::before,
+.pico-yellow > .pico-park-head::after,
+.pico-yellow > .pico-park-body,
+.pico-yellow > .pico-park-body::before,
+.pico-yellow > .pico-park-feet::before,
+.pico-yellow > .pico-park-feet::after {
+  background-color: #f6f687;
+  border-color: #b0af5c;
+}
+
+.pico-yellow > .pico-park-body::after {
+  box-shadow: 2.2em 0 0 #f6f687, 2.5em 0 0 #FFF;
+}
+
+.pico-blue > .pico-park-head,
+.pico-blue > .pico-park-head::before,
+.pico-blue > .pico-park-head::after,
+.pico-blue > .pico-park-body,
+.pico-blue > .pico-park-body::before,
+.pico-blue > .pico-park-feet::before,
+.pico-blue > .pico-park-feet::after {
+  background-color: #7fbeff;
+  border-color: #5d85b2;
+}
+
+.pico-blue > .pico-park-body::after {
+  box-shadow: 2.2em 0 0 #7fbeff, 2.5em 0 0 #FFF;
 }
 
 /*# sourceMappingURL=style.css.map */

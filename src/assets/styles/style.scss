@@ -1,21 +1,194 @@
+$background-default: rgb(100, 100, 100);
+$border-default: rgb(56, 55, 55);
+$rose: rgb(223,122,122);
+$border-rose: rgb(162,111,114);
+$green: rgb(148,224,148);
+$border-green: rgb(106,158,107);
+$yellow: rgb(246,246,135);
+$border-yellow: rgb(176,175,92);
+$blue: rgb(127,190,255);
+$border-blue: rgb(93,133,178);
 * {
     margin: 0;
     padding: 0;
+} 
+body {
+    overflow: hidden;
 }
-
 .container {
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     background-color: rgb(255,255,255);
-    border-bottom: 10vw solid rgb(184,97,57);
-    overflow: hidden;
+    border-bottom: 20vw solid rgb(184,97,57); 
 }
+.pico-park { 
+    width: 8em;
+    height: 8em;     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+} 
+.pico-park-head {
+    cursor: pointer;
+    width: 7em;
+    height: 4em;
+    background-color: $background-default;
+    border: 0.25em solid $border-default;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    &::before {
+        content: '';
+        position: absolute;
+        width: 2.5em;
+        height: 1em;
+        background-color: $background-default;
+        border: 0.25em solid $border-default;
+        border-bottom: none;
+        transform: translate(-2.25em, -2.62em);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 2.5em;
+        height: 1em;
+        background-color: $background-default;
+        border: 0.25em solid $border-default;
+        border-bottom: none;
+        transform: translate(2.25em, -2.62em);
+    } 
+}
+.pico-park-eyes {
+    cursor: pointer;
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: rgb(2, 0, 1);
+    transform: translate(-0.9em, 0.5em);
+    box-shadow: 3.5em 0 0px rgb(2, 0, 1);
+}
+.pico-park-body { 
+    cursor: pointer;
+    width: 3em;
+    height: 1.5em;
+    background-color: $background-default;
+    border: 0.25em solid $border-default;
+    border: {
+        top: none;
+        bottom: none;
+    };
+    transform: translateY(-0.25em);
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: $background-default;
+        border: 0.25em solid $border-default;
+        width: 1em;
+        height: 1.25em;
+        transform: translate(2.25em, 0.25em);
+        border: {
+            top: none;
+            left: none;
+        };
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: #FFF; 
+        width: 0.5em;
+        height: 0.5em;
+        transform: translate(0.25em, 0.75em);
+        box-shadow: 2.2em 0 0 $background-default,
+        2.5em 0 0 #FFF;
+    }
 
-.pico-park {
-    width: 200px;
-    height: 200px;    
-    border: 1px solid #000;
+}
+.pico-park-feet{
+    cursor: pointer;
+    &::before {
+        position: absolute;
+        content: '';
+        width: 1.5em;
+        height: 1em;
+        background-color: $background-default;
+        border: 0.25em solid $border-default;
+        border: {
+            top: none; 
+        };
+        transform: translate(-1.75em, -0.25em); 
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        width: 1.25em;
+        height: 1em;
+        background-color: $background-default;
+        border: 0.25em solid $border-default;
+        border: {
+            top: none; 
+        };
+        transform: translateY( -0.25em); 
+    }
+} 
+
+.pico-rose>.pico-park-head,
+.pico-rose>.pico-park-head::before,
+.pico-rose>.pico-park-head::after,
+.pico-rose>.pico-park-body,
+.pico-rose>.pico-park-body::before,
+.pico-rose>.pico-park-feet::before,
+.pico-rose>.pico-park-feet::after {
+    background-color: $rose;
+    border-color: $border-rose;
+} 
+.pico-rose>.pico-park-body::after{
+    box-shadow: 2.2em 0 0 $rose,
+        2.5em 0 0 #FFF;
+}
+.pico-green>.pico-park-head,
+.pico-green>.pico-park-head::before,
+.pico-green>.pico-park-head::after,
+.pico-green>.pico-park-body,
+.pico-green>.pico-park-body::before,
+.pico-green>.pico-park-feet::before,
+.pico-green>.pico-park-feet::after {
+    background-color: $green;
+    border-color: $border-green;
+} 
+.pico-green>.pico-park-body::after{
+    box-shadow: 2.2em 0 0 $green,
+        2.5em 0 0 #FFF;
+}
+.pico-yellow>.pico-park-head,
+.pico-yellow>.pico-park-head::before,
+.pico-yellow>.pico-park-head::after,
+.pico-yellow>.pico-park-body,
+.pico-yellow>.pico-park-body::before,
+.pico-yellow>.pico-park-feet::before,
+.pico-yellow>.pico-park-feet::after {
+    background-color: $yellow;
+    border-color: $border-yellow;
+} 
+.pico-yellow>.pico-park-body::after{
+    box-shadow: 2.2em 0 0 $yellow,
+        2.5em 0 0 #FFF;
+}
+.pico-blue>.pico-park-head,
+.pico-blue>.pico-park-head::before,
+.pico-blue>.pico-park-head::after,
+.pico-blue>.pico-park-body,
+.pico-blue>.pico-park-body::before,
+.pico-blue>.pico-park-feet::before,
+.pico-blue>.pico-park-feet::after {
+    background-color: $blue;
+    border-color: $border-blue;
+} 
+.pico-blue>.pico-park-body::after{
+    box-shadow: 2.2em 0 0 $blue,
+        2.5em 0 0 #FFF;
 }
