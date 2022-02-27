@@ -13,16 +13,20 @@ $border-blue: rgb(93,133,178);
     padding: 0;
 } 
 body {
-    overflow: hidden;
-}
-.container {
     width: 100vw;
     height: 80vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     background-color: rgb(255,255,255);
     border-bottom: 20vw solid rgb(184,97,57); 
+    overflow: hidden;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 .pico-park { 
     width: 8em;
@@ -191,4 +195,53 @@ body {
 .pico-blue>.pico-park-body::after{
     box-shadow: 2.2em 0 0 $blue,
         2.5em 0 0 #FFF;
+}
+.container-key{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.box {
+    height: 8em;
+}
+.key {
+    position: relative;
+    width: 4em;
+    height: 4em;
+    background-color: rgb(206, 206, 20);
+    border: .25em solid rgb(178,174,85);
+    border-radius: 1em; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    &::before {
+        content: '';
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        background-color: rgb(206, 206, 20);
+        border: .25em solid rgb(178,174,85);
+        border-radius: 0;
+        border-left: none;
+        transform: translate(1.1em, 4.5em);
+        z-index: 1;
+    } 
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1em;
+        height: 4em;
+        background-color: rgb(206, 206, 20);
+        border-top: none;
+        border: .25em solid rgb(178,174,85);
+        transform: translateY(4.1em);
+        border-top: none;
+    }
+}
+.circle {
+    width: 1em;
+    height: 1em;
+    background-color: #FFF;
+    border: 0.25em solid #FFF;
+    border-radius: 25%;
 }
